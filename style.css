@@ -1,0 +1,70 @@
+/* Apply dark theme and center everything */
+body {
+    background-color: #1e1e1e; /* Dark background */
+    color: #ffffff; /* White text color for contrast */
+    margin: 0;
+    height: 100vh; /* Full height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center-align text */
+    font-family: Arial, Helvetica, sans-serif; /* Font for readability */
+}
+
+/* Styling for headings and status text */
+h1, h2, p {
+    margin: 10px 0; /* Add some spacing */
+}
+
+/* Tic-Tac-Toe board styling */
+#board {
+    background-color: #333333; /* Darker board background */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 80px); /* Fixed cell size */
+    gap: 10px; /* Space between cells */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Cell styling */
+.cell {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #555; /* Lighter gray for border */
+    background-color: #444444; /* Dark gray background for cells */
+    color: #ffffff; /* White text for contrast */
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+/* Hover effect for cells */
+.cell:hover {
+    background-color: #555555; /* Lighten background on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Active (clicked) cell effect */
+.cell:active {
+    background-color: #777777; /* Darker background on click */
+    transform: scale(0.95); /* Slight shrink on click */
+}
+
+/* Additional padding for responsiveness */
+@media (max-width: 600px) {
+    #board {
+        grid-template-columns: repeat(3, 60px); /* Smaller cells for small screens */
+    }
+    
+    .cell {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
